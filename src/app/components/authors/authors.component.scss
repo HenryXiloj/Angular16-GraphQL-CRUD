@@ -1,0 +1,115 @@
+
+.mat-mdc-form-field {
+  margin-bottom: 16px; /* Adjust the margin-bottom as desired */
+  width: 100%; /* Adjust the width as desired */
+}
+
+.mat-mdc-form-field .mat-mdc-input-element {
+  border-radius: 4px; /* Adjust the border radius as desired */
+  background-color: #f1f1f1; /* Set the background color for the input field */
+  padding: 8px; /* Adjust the padding as desired */
+}
+
+.mat-mdc-form-field .mat-mdc-input-element:focus {
+  outline: none; /* Remove the focus outline */
+  background-color: #ffffff; /* Set the background color when the input field is focused */
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3); /* Add a box shadow when the input field is focused */
+}
+
+
+.mat-mdc-row:nth-child(even) {
+  background-color: #f1f1f1; /* Set the background color for even rows */
+}
+
+.mat-mdc-row:nth-child(odd) {
+  background-color: #ffffff; /* Set the background color for odd rows */
+}
+
+.mat-mdc-table .mdc-data-table__header-row {
+  height: 35px;
+}
+
+.mat-mdc-table .mdc-data-table__row{
+  height: 35px;
+}
+
+.mdc-fab {
+  position: relative;
+  display: inline-flex;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  width: 35px;
+  height: 35px;
+  padding: 0;
+  border: none;
+  fill: currentColor;
+  text-decoration: none;
+  cursor: pointer;
+  user-select: none;
+  overflow: visible;
+  transition: box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1),opacity 15ms linear 30ms,transform 270ms 0ms cubic-bezier(0, 0, 0.2, 1);
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  background-color: #f1f1f1;
+}
+
+.graphql-header {
+  font-size: 24px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-grow: 1;
+  color: #444;
+}
+
+.button-container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.content-container {
+  display: flex;
+  align-items: center;
+}
+
+.text {
+  margin-right: 8px; /* Adjust the margin as desired */
+}
+
+.table-container {
+  margin: 20px;
+}
+
+@media (max-width: 600px) {
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .button-container {
+    margin-top: 10px;
+  }
+
+  .mdc-fab {
+    width: 20px;
+    height: 20px;
+  }
+
+  .mat-mdc-table .mdc-data-table__header-row {
+    height: 20px;
+  }
+  
+  .mat-mdc-table .mdc-data-table__row{
+    height: 20px;
+  }
+
+}

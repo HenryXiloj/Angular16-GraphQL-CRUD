@@ -1,0 +1,30 @@
+<div class="dialog-header">
+  <div class="dialog-title">
+    <mat-icon>person_add</mat-icon>
+    <span>{{ mode === 'create' ? 'Create Author' : 'Edit Author' }}</span>
+  </div>
+  <button mat-icon-button class="close-button" (click)="onCancel()">
+    <mat-icon>close</mat-icon>
+  </button>
+</div>
+
+<div mat-dialog-content>
+  <ng-container *ngIf="mode === 'edit'">
+    <mat-form-field>
+      <input matInput [(ngModel)]="id" [disabled]="true" placeholder="ID">
+    </mat-form-field>
+  </ng-container>
+  <mat-form-field>
+    <input matInput [(ngModel)]="firstName" placeholder="First Name">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput [(ngModel)]="lastName" placeholder="Last Name">
+  </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onCancel()">Cancel</button>
+  <button mat-button color="primary" (click)="mode === 'create' ? createAuthor() : updateAuthor()">
+    {{ mode === 'create' ? 'Create' : 'Update' }}
+  </button>
+</div>
+
