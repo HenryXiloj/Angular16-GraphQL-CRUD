@@ -51,17 +51,20 @@ export class AuthorsComponent implements AfterViewInit, OnInit {
   }
 
   getAllAuthors(): void {
-    this.subscription = this.authorService.getAllAuthors().subscribe(
-      response => {
+    
+    this.subscription = this.authorService.getAllAuthors().subscribe({
+      next: (response: any) => {
+        // Handle successful response, if needed
         this.dataSource = new MatTableDataSource(response.data.getAllAuthors);
         this.table.dataSource = this.dataSource;
         this.dataSource.sort = this.sort;
         this.dataSource.paginator = this.paginator;
-      },
-      error => {
-        console.error('Error fetching authors:', error);
-      }
-    );
+      }, 
+      error: (error: any) => {
+        console.error('Error updating author:', error);
+      },    // errorHandler 
+    });
+
   }
 
   deleteAuthor(id: number): void {
