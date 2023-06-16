@@ -51,7 +51,7 @@ export class AuthorsComponent implements AfterViewInit, OnInit {
   }
 
   getAllAuthors(): void {
-    
+
     this.subscription = this.authorService.getAllAuthors().subscribe({
       next: (response: any) => {
         // Handle successful response, if needed
@@ -59,7 +59,7 @@ export class AuthorsComponent implements AfterViewInit, OnInit {
         this.table.dataSource = this.dataSource;
         this.dataSource.sort = this.sort;
         this.dataSource.paginator = this.paginator;
-      }, 
+      },
       error: (error: any) => {
         console.error('Error updating author:', error);
       },    // errorHandler 
@@ -75,7 +75,7 @@ export class AuthorsComponent implements AfterViewInit, OnInit {
         this.getAllAuthors();
 
       }, // completeHandler
-      error:  (error: any)  => {
+      error: (error: any) => {
         console.error('Error deleting author:', error);
       },    // errorHandler 
     });
